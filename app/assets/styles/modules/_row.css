@@ -18,7 +18,12 @@
 		
 	&--gutters > div {
 		&:not(:last-child) {
-		padding-right: 65px;
+		margin-right: 65px;
+		}
+	}
+	&--gutters-large > div {
+		&:not(:last-child) {
+		margin-right: 100px;
 		}
 	}
 
@@ -30,6 +35,11 @@
 		&--larger {
 			flex: 4.5;
 		}
+	} 
+
+	&__medium-6 {
+		width: 50%;
+		flex: 1;
 	}
 
 	&__medium-8 {
