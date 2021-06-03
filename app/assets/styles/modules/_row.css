@@ -1,6 +1,4 @@
 .row {
-	display: flex;
-	flex-direction: column;
 
 	&--t-padding {
 		padding-top: 80px;
@@ -12,6 +10,8 @@
 
 
 	@mixin atMedium {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
 
 		
 	&__b-margin-until-medium {
@@ -19,50 +19,54 @@
 	}
 
 		
-	&--gutters > div {
-		&:not(:last-child) {
-		margin-right: 65px;
-		}
+	&--gutters {
+		column-gap: 5.3%;
 	}
-	&--gutters-large > div {
-		&:not(:last-child) {
-		margin-right: 100px;
-		}
+	&--gutters-large {
+		column-gap: 8%;
+		
 	}
-	&--gutters-small > div {
-		&:not(:last-child) {
-		margin-right: 45px;
-		}
+	&--gutters-small {
+		
+		column-gap: 3.6%;
+	}
+
+	&__large-1, 
+	&__large-2, 
+	&__large-3, 
+	&__large-4, 
+	&__large-5, 
+	&__large-6, 
+	&__large-7, 
+	&__large-8, 
+	&__large-9, 
+	&__large-10, 
+	&__large-11, 
+	&__large-12 {
+		grid-column: span 12;
 	}
 
 	&__medium-4 {
-		/* float: left; */
-		/* width: 33.33%; */
-		flex: 4;
-
+		grid-column: span 4;
 		&--larger {
-			flex: 4.5;
+			grid-column: span 5;
 		}
 	} 
 
 	&__medium-6 {
-		width: 50%;
-		flex: 1;
+		grid-column: span 6;
 	}
 
 	&__medium-8 {
-		/* float: left; */
-		/* width: 66.66%; */
-		flex: 8;
+		grid-column: span 8;
 
 		&--smaller {
-			flex: 7.5;
+			grid-column: span 7;
 		}
 	}
 }
 
 @mixin atLarge {
-	flex-direction: row;
 
 	
 &__b-margin-until-large {
@@ -70,44 +74,22 @@
 }
 
 	
-&--gutters > div {
-	&:not(:last-child) {
-	margin-right: 65px;
-	}
-}
-&--gutters-large > div {
-	&:not(:last-child) {
-	margin-right: 100px;
-	}
-}
-&--gutters-small > div {
-	&:not(:last-child) {
-	margin-right: 45px;
-	}
-}
-
 &__large-4 {
-	/* float: left; */
-	/* width: 33.33%; */
-	flex: 4;
+	grid-column: span 4;
 
 	&--larger {
-		flex: 4.5;
+		grid-column: span 5;
 	}
 } 
 
 &__large-6 {
-	width: 50%;
-	flex: 1;
+	grid-column: span 6;
 }
 
 &__large-8 {
-	/* float: left; */
-	/* width: 66.66%; */
-	flex: 8;
-
+	grid-column: span 8;
 	&--smaller {
-		flex: 7.5;
+		grid-column: span 7;
 	}
 }
 }
@@ -115,22 +97,21 @@
 /* Begin equal height rules */
 &--equal-height-at-medium {
 	@mixin atMedium {
-		display: flex;
+		/* display: flex; */
 	}
 
 	& > div {
-		float: none;
+		/* float: none; */
 		display: flex;
 	}
 }
 &--equal-height-at-large {
 	@mixin atLarge {
+		
+	& > div {
 		display: flex;
+	}
 	}
 
-	& > div {
-		float: none;
-		display: flex;
-	}
 }
 }
