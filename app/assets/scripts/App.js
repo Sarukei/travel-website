@@ -25,15 +25,12 @@ document.querySelectorAll('.open-modal').forEach(el => {
 				console.log(`There was a problem. ${err}`);
 
 			})
-
-
 		} else {
 			modal.openTheModal();
 		}
 
 	})
 })
-
 
 if (module.hot) {
 	module.hot.accept()
